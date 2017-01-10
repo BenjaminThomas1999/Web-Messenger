@@ -1,0 +1,253 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+body{
+	font-size:45px;
+	font-family: 'Open Sans', sans-serif;
+	background:#333333;
+	padding:0;
+	margin:0;
+	overflow-x:hidden;
+}
+::-webkit-input-placeholder {
+   font-size:40px;
+   text-align:left;
+}
+#settings{
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index:6;
+	display:none;
+	background:rgba(0, 0, 0, 0.4);
+	
+}
+
+#settings .container{
+	width:80%;
+	background:white;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	padding:10px;
+
+}
+
+#header{
+	position:fixed;
+	width:100%;
+	padding-top:20px;
+	padding-bottom:20px;
+	background:white;
+	top:0;
+	left:0;
+	z-index:10;
+	box-shadow: 0px 10px 47px -10px rgba(0,0,0,0.75);
+	text-align:center;
+	color:white;
+	background:#E05E57;
+}
+
+audio{
+	width:100%;
+	height:50px;
+}
+
+#conversation{
+	width:100%;
+	height:80%;
+	left:0;
+	top:0;
+	padding:0;
+	margin:0;
+	margin-bottom:35%;
+}
+
+#messageForm{
+	position:fixed;
+	bottom:-40px;
+	width:100%;
+}
+
+#message{
+	width:95%;
+	height:20%;
+	max-height:20%;
+	font-size:50px;
+	padding:2.5%;
+	margin:0;
+	border:none;
+	outline:none;
+	resize: none;
+	box-shadow: 0px -10px 47px -10px rgba(0,0,0,0.75);
+	background:#f3f2ee;
+	font-family: 'Open Sans', sans-serif;
+	overflow:hidden;
+}
+#message:focus{
+	max-height:40%;
+	overflow:scroll;
+}
+#message:not(:focus){
+	height:20%;
+	max-height:20%;
+	overflow:hidden;
+}
+#send, #menu{
+	bottom:25%;
+	z-index:10;
+	border: none;
+    text-decoration: none;
+    display: inline-block;
+    margin:20px;
+  	float:right;
+  	background:transparent;
+}
+#menu{
+	float:left;
+}
+
+
+
+#conversation .entry{
+	margin-left:40px;
+	margin:20px;
+	word-wrap: break-word;
+
+}
+#conversation .entry video,#conversation .entry img{
+	background:#AFAFAF;
+	width:90%;
+	margin:5%;
+}
+#conversation .entry iframe{
+	width:100%;
+	max-width:100%;
+	height:900px;
+	border:none;
+	overflow:hidden;
+}
+
+
+
+
+
+#conversation .entry .meta{
+	display:block;
+	position:relative;
+	float:left;
+	padding:10px;
+	top:-15px;
+	right:0;
+	height:20px;
+	-webkit-transition: right 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: right 0.5s;
+}
+#conversation .entry.self .meta{
+	float:right;
+	left:-1%;
+	-webkit-transition: left 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: left 0.5s;
+}
+
+#conversation .entry.activated .meta{
+	right:-57%;
+}
+#conversation .entry.activated.self .meta{
+	left:-60%;
+}
+
+#conversation .entry .name, #conversation .entry .date, #conversation .entry .read{
+	color:#f3f2ee;
+	font-size:25px;
+	padding:0;
+	margin:0;
+	text-align:left;
+}
+#conversation .entry .name{
+	font-size:30px;
+}
+#conversation .self .name, #conversation .self .date, #conversation .self .read{
+	text-align:right;
+}
+
+
+
+#conversation .entry .content{
+	padding:15px;
+	margin:5px;
+	background:#3D8CCF;
+	color:white;
+	width:50%;
+	position: relative;
+	clear: both;
+}
+#conversation .entry.self .content{
+	background:#f3f2ee;
+	margin-right:40px;
+	margin-left:auto;
+	color:black;
+	margin-right:20px;
+	border-right:none;
+}
+
+#conversation .entry .content p{
+	width:100%;
+	height:100%;
+	position:relative;
+	left:0;
+	top:0;
+	padding:0;
+	margin:0;
+}
+#conversation .entry .content a{
+	color:white;
+}
+#conversation .self .content a{
+	color:black;
+}
+
+
+/*
+	Border Arrows
+*/
+
+#conversation .entry .content:after, #conversation .entry .content:before {
+	right: 99%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+#conversation .entry .content:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-right-color: #3D8CCF;
+	border-width: 23px;
+	margin-top: -23px;
+}
+#conversation .self .content:after, #conversation .self .content:before {
+	left: 99%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+#conversation .self .content:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-left-color: #f3f2ee;
+	border-width: 23px;
+	margin-top: -23px;
+}
+
+#conversation .entry .activated{
+	margin-left:20%;
+}
